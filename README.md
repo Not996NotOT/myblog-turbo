@@ -1,84 +1,80 @@
-# Turborepo starter
+# MyBlog Turbo
 
-This Turborepo starter is maintained by the Turborepo core team.
+一个基于 Turborepo 和 Next.js 构建的现代化博客系统。
 
-## Using this example
+## 特性
 
-Run the following command:
+- 📝 Markdown 支持
+  - 支持 frontmatter 元数据
+  - 代码语法高亮
+  - 文章摘要
+- 🏷️ 分类系统
+  - 文章分类筛选
+  - 分类标签展示
+- 🎨 现代化 UI
+  - 响应式设计
+  - 深色模式支持
+  - 动画效果
+- 🛠️ 技术栈
+  - Next.js 14 App Router
+  - Turborepo
+  - TypeScript
+  - Tailwind CSS
+  - HeadlessUI
 
-```sh
-npx create-turbo@latest
+## 快速开始
+
+```bash
+# 克隆项目
+git clone https://github.com/Not996NotOT/myblog-turbo.git
+cd myblog-turbo
+
+# 安装依赖
+bun install
+
+# 启动开发服务器
+bun dev
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+## 项目结构
 
 ```
-cd my-turborepo
-pnpm build
+myblog-turbo/
+├── apps/
+│   └── web/                # Next.js 博客应用
+│       ├── app/            # App Router 页面
+│       ├── content/        # Markdown 文章
+│       └── lib/           # 工具函数
+├── packages/
+│   ├── ui/                # 共享 UI 组件
+│   ├── eslint-config/     # 共享 ESLint 配置
+│   └── typescript-config/ # 共享 TypeScript 配置
 ```
 
-### Develop
+## 写作指南
 
-To develop all apps and packages, run the following command:
+1. 在 `apps/web/content/posts` 目录下创建 `.md` 文件
+2. 添加 frontmatter 元数据:
+   ```markdown
+   ---
+   title: "文章标题"
+   date: "2024-02-06"
+   category: "分类"
+   ---
+   ```
+3. 使用 Markdown 语法编写文章内容
 
-```
-cd my-turborepo
-pnpm dev
-```
+## 开发指南
 
-### Remote Caching
+- `bun dev`: 启动开发服务器
+- `bun build`: 构建生产版本
+- `bun lint`: 运行代码检查
+- `bun type-check`: 运行类型检查
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+## 贡献
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+欢迎提交 Pull Request 和 Issue！
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+## 许可
 
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+MIT License
